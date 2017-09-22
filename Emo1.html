@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Emiliano</title>
+	<link rel="stylesheet" type="text/css" href="Emo1.css" />
+</head>
+<body>
+    <table class="sajt">
+    	<tr>
+    		<td class="meni">
+    			<a href="index.php">Pocetna</a>
+    			<a href="index.php?opcija=muzika">Muzika</a>
+    			<a href="index.php?opcija=video">Video</a>
+    			<a href="index.php?opcija=kontakt">Kontakt</a>
+    			<a href="index.php?opcija=za_nas">Za nas</a>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>
+    			<table class="glavnomeni">
+    				<tr>
+    					<td id="blog" valign="TOP">
+    						<?php
+    						    if(isset($_GET['opcija'])){
+                                    $opcija = $_GET['opcija'];
+                                    $fajl = $opcija. ".php";
+                                    if(file_exists($fajl)) {
+                                    	include_once($fajl) ;
+                                    }
+                                    else{
+                                         ?>
+                                            <h3>Greska ! </h3>
+                                            <p>Stranicata ne postoi</p>
+                                         <?php
+
+                                    }
+                                    }
+    						    }
+    						    else{
+                                     ?>
+                                         <img src="Angel.jpg" class="slika" />
+    						             Emo sajt za vasa i nasa zabava
+                                     <?php
+    						    }
+    						?>
+    						
+    					</td >
+    					<td id="desno" valign="TOP">
+    						login
+    					</td>
+
+    				</tr>
+    			</table>
+    		</td>
+    	</tr>
+    	<td class="EmilianoEmo">EmilianoEmo</td>
+    	
+    </table>
+
+
+
+	
+</body>
+</html>
